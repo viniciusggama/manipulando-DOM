@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: rgba(95, 122, 120, 0.582);
+        }
+        #conteudo{
+            position: absolute;
+            background-color: rgba(69, 231, 231, 0.842);
+            width: 400px;
+            height: 200px;
+            border-radius: 10px;
+            box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.575);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50% , -50%);
+            
+        }
+
+        h1{
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: rgb(25, 129, 226);
+            border-radius: 10px 10px 0px 0px;
+            box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.575);
+        }
+
+        #resultado{
+            border-radius: 5px;
+            margin: auto;
+            text-align: center;
+            height: 30px;
+            background-color: rgb(3, 0, 0);
+            width: 350px;
+            height: 80px;
+            color: white;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        #entrada{
+            margin-left: 130px;
+        }
+
+        #velocidade{
+           border: 2px solid black;
+            border-radius: 10px;
+            width: 100px;
+            height: 30px;
+            font-family: fantasy;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        #botao{
+            border: none;
+            border-radius: 8px;
+            width: 80px;
+            background-color: rgb(0, 0, 0);
+            color: red;
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           cursor: pointer;
+           margin-top:;
+
+        }
+
+        #botao:hover{
+            background-color: red;
+            color: black;
+        }
+    </style>
+    
+</head>
+<body>
+<div id="conteudo">
+    <h1>SISTEMA DE MULTAS</h1>
+<div id="resultado">sua velocidade</div>
+<div id="entrada">
+   <input type="number" name="velocidade" id="velocidade">
+   <input type="button" value="verificar" onclick="calcular()" id="botao">
+</div>
+   </div>
+   <script>
+    function calcular() {
+    
+        var res = window.document.querySelector('div#resultado')
+        var velocidade = window.document.querySelector('input#velocidade')
+        var velocidadeN = Number(velocidade.value)
+        res.innerHTML = (`sua velocidade é de <strong> ${velocidadeN} </strong> km/h <br>` ) 
+
+
+            if(velocidadeN > 60){
+                res.innerHTML += ('você foi <strong> multado </strong>, por esta acima da velocidade permitida')
+            }else{
+                res.innerHTML += ('você esta dentro da velociddade permitada')
+            }
+
+    }
+        
+   </script>
+    
+</body>
+</html>
